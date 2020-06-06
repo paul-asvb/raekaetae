@@ -18,3 +18,15 @@ scale = Vector2( 1, 1.00869 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 92.0
+margin_top = -178.0
+margin_right = 132.0
+margin_bottom = -164.0
+rect_scale = Vector2( 6.36, 5.88 )
+text = "text"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "text"
+}

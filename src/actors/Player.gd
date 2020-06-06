@@ -10,8 +10,12 @@ func _physics_process(delta: float) -> void:
 	velocity.y = gravity *delta
 	velocity.y= max(velocity.y,speed.y)
 	velocity = move_and_slide(velocity)
-	var direction: = Vector2(Input.get_action_strength("move_left")-Input.get_action_strength("move_right"),0)
-	velocity= speed * direction
+	#var direction: = Vector2(Input.get_action_strength("move_left")-Input.get_action_strength("move_right"),0)
+	#velocity= speed * direction
+	
+	var lab = get_node("Label")
+	lab.set_text(String(delta))
+	
 	return
 
 
