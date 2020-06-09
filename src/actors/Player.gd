@@ -11,7 +11,6 @@ func _physics_process(delta: float) -> void:
 	
 	var input :=  Input.get_action_strength("thrust")
 	
-	
 	velocity.y = gravity * delta 
 	velocity.y= max(velocity.y,speed.y)
 	if input ==	 1 :
