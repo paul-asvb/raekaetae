@@ -10,9 +10,8 @@ export var acceleration := -1.1
 func _physics_process(delta: float) -> void:	
 	
 	var input :=  Input.get_action_strength("thrust")
-	
 	velocity.y = gravity * delta 
-	velocity.y= max(velocity.y,speed.y)
+	#velocity.y= max(velocity.y,speed.y)
 	if input ==	 1 :
 		velocity.y = velocity.y*acceleration
 	velocity = move_and_slide(velocity)
