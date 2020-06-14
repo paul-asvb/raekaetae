@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/bg.jpg" type="Texture" id=1]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/box.png" type="Texture" id=3]
+[ext_resource path="res://src/actors/Player_rigid.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 48, 48, 0, 48, 0, 3.05176e-05, 48, 3.05176e-05 )
@@ -42,9 +42,7 @@ tile_data = PoolIntArray( 0, 0, 0, 16, 0, 0, 65536, 0, 0, 65552, 0, 0, 131072, 0
 position = Vector2( 337, 262 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="TileMap"]
-scale = Vector2( 0.1, 0.1 )
-
-[node name="box" type="Sprite" parent="TileMap/RigidBody2D"]
-position = Vector2( 6430, 3010 )
-texture = ExtResource( 3 )
+[node name="Box" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 340, 164 )
+collision_layer = 3
+collision_mask = 3
