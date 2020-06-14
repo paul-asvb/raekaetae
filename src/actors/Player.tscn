@@ -3,7 +3,8 @@
 [ext_resource path="res://assets/rakete.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="RigidBody2D"]
+scale = Vector2( 0.3, 0.3 )
 collision_mask = 2
 script = ExtResource( 2 )
 
@@ -24,4 +25,4 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 22, -17, 87, 32, 129, 52, 133, 111, 136, 151, 25, 153, -172, 163, -104, 55, -106, 33, -81, -35, -48, -143, -10, -175, -5, -189, 27, -147, 61, -109, 73, -41 )
+polygon = PoolVector2Array( 87, -3, 86, 35, 112, 36, 141, 88, 142, 153, -141, 151, -141, 88, -111, 36, -86, 35, -86, -11, -78, -67, -57, -123, -28, -164, 0, -195, 31, -161, 57, -122, 77, -66 )

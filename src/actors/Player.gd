@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	#velocity.y= max(velocity.y,speed.y)
 	if input ==	 1 :
 		velocity.y = velocity.y*acceleration
-	velocity = move_and_slide(velocity)
+	#velocity = move_and_slide(velocity)
 	
 	#var direction: = Vector2(Input.get_action_strength("move_left")-Input.get_action_strength("move_right"),0)
 	

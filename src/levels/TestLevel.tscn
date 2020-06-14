@@ -40,7 +40,6 @@ tile_data = PoolIntArray( 0, 0, 0, 16, 0, 0, 65536, 0, 0, 65552, 0, 0, 131072, 0
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 337, 262 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="Box" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 340, 164 )
