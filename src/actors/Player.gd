@@ -1,6 +1,5 @@
 extends Actor
 
-var velocity: = Vector2.ZERO
 
 
 func _physics_process(delta: float) -> void:	
@@ -12,8 +11,9 @@ func _physics_process(delta: float) -> void:
 	add_force(Vector2(0,0),Vector2(0,2))
 	
 	
+
 	var lab = get_node("Label")
-	lab.set_text(String(velocity))
+	lab.set_text(String(linear_velocity.y))
 	
 	return
 
