@@ -1,14 +1,19 @@
 extends Actor
 
-
+var force := Vector2(0,-10)
 
 func _physics_process(delta: float) -> void:	
 	
-	var input :=  Input.get_action_strength("thrust")
-	if input ==	 1 :
-		add_force(Vector2(0,10),Vector2(0,-10))
+	var left :=  Input.get_action_strength("move_left")
+	var right :=  Input.get_action_strength("move_right")
+	if right ==	 1 :
+		add_force(Vector2(-10,10),force)
+	if left ==	 1 :
+		add_force(Vector2(10,10),force)
 	
-	add_force(Vector2(0,0),Vector2(0,2))
+	#linear_velocity = max(Vector2(10,10))
+	
+	#add_force(Vector2(0,0),Vector2(0,2))
 	
 	
 
