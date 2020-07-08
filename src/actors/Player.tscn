@@ -322,7 +322,7 @@ position = Vector2( -112.667, 204 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 frames = SubResource( 61 )
-frame = 5
+frame = 28
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -330,7 +330,7 @@ position = Vector2( 117.333, 207.333 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 frames = SubResource( 61 )
-frame = 4
+frame = 27
 playing = true
 
 [node name="rakete" type="Sprite" parent="."]
