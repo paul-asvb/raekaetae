@@ -2,7 +2,7 @@ services:
 - docker
 
 env:
-  - GAME_NAME="RÄKÄTE" GODOT_VERSION="3.0"
+  - GAME_NAME="RÄKÄTE" GODOT_VERSION="3.2.2"
 
 install:
 - docker pull "gamedrivendesign/godot-export:${GODOT_VERSION}"
