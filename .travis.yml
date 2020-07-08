@@ -1,0 +1,38 @@
+services:
+- docker
+
+env:
+  - GAME_NAME="RÄKÄTE" GODOT_VERSION="3.2.0"
+
+install:
+- docker pull "gamedrivendesign/godot-export:${GODOT_VERSION}"
+
+script:
+- docker run -e EXPORT_NAME="HTML5"           -e OUTPUT_FILENAME="index.html"           -v $(pwd):/build/src -v $(pwd)/output/html5:/build/output   "gamedrivendesign/godot-export:${GODOT_VERSION}"
+- docker run -e EXPORT_NAME="Linux/X11"       -e OUTPUT_FILENAME="${GAME_NAME}"         -v $(pwd):/build/src -v $(pwd)/output/linux:/build/output   "gamedrivendesign/godot-export:${GODOT_VERSION}"
+- docker run -e EXPORT_NAME="Windows Desktop" -e OUTPUT_FILENAME="${GAME_NAME}.exe"     -v $(pwd):/build/src -v $(pwd)/output/windows:/build/output "gamedrivendesign/godot-export:${GODOT_VERSION}"
+- docker run -e EXPORT_NAME="Mac OSX"         -e OUTPUT_FILENAME="${GAME_NAME}-mac.zip" -v $(pwd):/build/src -v $(pwd)/output/mac:/build/output     "gamedrivendesign/godot-export:${GODOT_VERSION}"
+
+before_deploy:
+- zip -j "${GAME_NAME}-linux.zip"   output/linux/*
+- zip -j "${GAME_NAME}-windows.zip" output/windows/*
+- cp -R output/mac/* .
+
+deploy:
+- provider: releases
+  skip-cleanup: true
+  api_key: $GITHUB_TOKEN
+  file:
+    - "${GAME_NAME}-linux.zip"
+    - "${GAME_NAME}-windows.zip"
+    - "${GAME_NAME}-mac.zip"
+  on:
+    all_branches: true
+    tags: true
+
+- provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: output/html5
+  on:
+    branch: master
