@@ -4,18 +4,27 @@ var velocityMax := Vector2(100,100)
 var force := 3
 
 func _physics_process(delta: float) -> void:	
+	get_node("fireRight").visible = false
+	get_node("fireLeft").visible = false
 	
 	var left :=  Input.get_action_strength("move_left")
 	var right :=  Input.get_action_strength("move_right")
+	
 	var boosterForce = Vector2(-0,100)
 	if right ==	 1 :
+		get_node("fireRight").visible = true
+		
 		var offsetRight := Vector2(-0,100)
 		add_force(offsetRight,boosterForce)
 	if left ==	 1 :
+		get_node("fireLeft").visible = true
+		
 		var offsetleft := Vector2(-0,100)		
 		add_force(offsetleft,boosterForce)
 	
 	linear_velocity = velocityMax.clamped(3)
+	
+
 	
 	#add_force(Vector2(0,0),Vector2(0,2))
 	
