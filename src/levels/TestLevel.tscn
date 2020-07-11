@@ -41,6 +41,8 @@ tile_data = PoolIntArray( 0, 0, 0, 16, 0, 0, 65536, 0, 0, 65552, 0, 0, 131072, 0
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 337, 262 )
 scale = Vector2( 1, 1 )
+mass = 1.02041
+gravity_scale = 10.0
 linear_damp = 0.5
 angular_damp = 0.5
 

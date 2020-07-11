@@ -8,4 +8,4 @@ docker run -e EXPORT_NAME="Mac OSX"  \
        -e OUTPUT_FILENAME="rkt-mac.zip" \
        -v $(pwd):/build/src \
        -v $(pwd)/output/mac:/build/output  \
-         "gamedrivendesign/godot-export:3.2.2"
+         "barichello/godot-ci:3.2.1"

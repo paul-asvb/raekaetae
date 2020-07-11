@@ -1,7 +1,7 @@
 extends Actor
 
 var velocityMax := Vector2(100,100)
-var force := 3
+var force := 10
 
 func _physics_process(delta: float) -> void:	
 	get_node("fireRight").visible = false
@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	var left :=  Input.get_action_strength("move_left")
 	var right :=  Input.get_action_strength("move_right")
 	
-	var boosterForce = Vector2(-0,-100)
+	var boosterForce = Vector2(-0,-force)
 	if right ==	 1 :
 		get_node("fireRight").visible = true
 		
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
 		
-		var offsetleft := Vector2(-0,100)		
+		var offsetleft := Vector2(-10,0)		
 		add_force(offsetleft,boosterForce)
 	
 	linear_velocity = velocityMax.clamped(3)
