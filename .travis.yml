@@ -2,7 +2,7 @@ services:
 - docker
 
 env:
-  - GAME_NAME="RÄKÄTE" GODOT_VERSION="3.2.2"
+  - GAME_NAME="RÄKÄTÄ" GODOT_VERSION="3.2.2"
 
 install:
 - docker pull "gamedrivendesign/godot-export:${GODOT_VERSION}"
@@ -29,10 +29,3 @@ deploy:
   on:
     all_branches: true
     tags: true
-
-- provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local-dir: output/html5
-  on:
-    branch: master
