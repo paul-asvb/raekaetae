@@ -317,20 +317,22 @@ scale = Vector2( 0.3, 0.3 )
 collision_mask = 2
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="fireLeft" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -112.667, 204 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 frames = SubResource( 61 )
-frame = 28
+frame = 17
 playing = true
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+[node name="fireRight" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 117.333, 207.333 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 frames = SubResource( 61 )
-frame = 27
+frame = 16
 playing = true
 
 [node name="rakete" type="Sprite" parent="."]
