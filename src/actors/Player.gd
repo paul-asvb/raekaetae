@@ -26,6 +26,8 @@ func _physics_process(delta: float) -> void:
 	
 
 	
+
+	
 	#add_force(Vector2(0,0),Vector2(0,2))
 	
 	

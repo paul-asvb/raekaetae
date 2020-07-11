@@ -4,8 +4,10 @@ https://www.youtube.com/watch?v=Mc13Z2gboEk
 https://www.youtube.com/watch?v=RBotJacQycc
 
 https://www.youtube.com/watch?v=gkY6X-bziHQ
-docker run -e EXPORT_NAME="Mac OSX"  \
-       -e OUTPUT_FILENAME="rkt-mac.zip" \
-       -v $(pwd):/build/src \
-       -v $(pwd)/output/mac:/build/output  \
-         "barichello/godot-ci:3.2.1"
+
+docker run \
+	-e EXPORT_NAME="Mac OSX"  \
+    -v $(pwd):/build/src \
+    -w /build/src \
+    "barichello/godot-ci:3.2.1" \
+    godot -v --export "Mac OSX" raekaetae.zip
