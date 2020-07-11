@@ -10,11 +10,11 @@ func _physics_process(delta: float) -> void:
 	var left :=  Input.get_action_strength("move_left")
 	var right :=  Input.get_action_strength("move_right")
 	
-	var boosterForce = Vector2(-0,100)
+	var boosterForce = Vector2(-0,-100)
 	if right ==	 1 :
 		get_node("fireRight").visible = true
 		
-		var offsetRight := Vector2(-0,100)
+		var offsetRight := Vector2(10,0)
 		add_force(offsetRight,boosterForce)
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
