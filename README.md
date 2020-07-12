@@ -6,7 +6,6 @@ https://www.youtube.com/watch?v=RBotJacQycc
 https://www.youtube.com/watch?v=gkY6X-bziHQ
 
 docker run \
-	-e EXPORT_NAME="Mac OSX"  \
     -v $(pwd):/build/src \
     -w /build/src \
     "barichello/godot-ci:3.2.1" \
