@@ -1,39 +1,30 @@
 extends Actor
 
 var velocityMax := Vector2(100,100)
-var force := 10
+var force := 2
+var offset := 100
+var boosterTorque :=2
 
-func _physics_process(delta: float) -> void:	
+func _process(delta):
+	
 	get_node("fireRight").visible = false
 	get_node("fireLeft").visible = false
 	
 	var left :=  Input.get_action_strength("move_left")
 	var right :=  Input.get_action_strength("move_right")
 	
-	var boosterForce = Vector2(-0,-force)
 	if right ==	 1 :
 		get_node("fireRight").visible = true
 		
-		var offsetRight := Vector2(10,0)
-		add_force(offsetRight,boosterForce)
+		var boosterForceRight = Vector2(-boosterTorque,-force)		
+		var offsetRight := Vector2(offset,0)
+		apply_impulse(offsetRight,boosterForceRight)
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
+		var boosterForceLeft = Vector2(boosterTorque,-force)
+		var offsetleft := Vector2(-offset,0)		
+		apply_impulse(offsetleft,boosterForceLeft)
 		
-		var offsetleft := Vector2(-10,0)		
-		add_force(offsetleft,boosterForce)
-	
-	linear_velocity = velocityMax.clamped(3)
-	
-
-	
-
-	
-	#add_force(Vector2(0,0),Vector2(0,2))
-	
-	
-
-	var lab = get_node("Label")
-	lab.set_text(String(linear_velocity.y))
 	
 	return
 
