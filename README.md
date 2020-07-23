@@ -9,4 +9,6 @@ docker run \
     -v $(pwd):/build/src \
     -w /build/src \
     "barichello/godot-ci:3.2.1" \
-    godot -v --export "Mac OSX" raekaetae.zip
+    godot -v --export "HTML5" raekaetae.zip
+
+docker run  -v $PWD:/usr/share/nginx/html:ro -p 80 -d nginx
