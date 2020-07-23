@@ -8,7 +8,8 @@ https://www.youtube.com/watch?v=gkY6X-bziHQ
 docker run \
     -v $(pwd):/build/src \
     -w /build/src \
+    -v $PWD/export:/export \
     "barichello/godot-ci:3.2.1" \
-    godot -v --export "HTML5" raekaetae.zip
+    godot -v --export "HTML5" /export/raekaetae.zip
 
-docker run  -v $PWD:/usr/share/nginx/html:ro -p 80 -d nginx
+docker run  -v $PWD/export:/usr/share/nginx/html:ro -p 80 -d nginx
