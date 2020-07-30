@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir -v -p /build/web
           godot -v --export "HTML5" /build/web/index.html
-          cp /build/web/ build/web/
+          cp /build/web/ build/web/it
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
