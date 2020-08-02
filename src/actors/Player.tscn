@@ -320,14 +320,14 @@ script = ExtResource( 2 )
 position = Vector2( -32.0335, 71.2907 )
 rotation = 3.14159
 frames = SubResource( 61 )
-frame = 44
+frame = 48
 playing = true
 
 [node name="fireRight" type="AnimatedSprite" parent="."]
 position = Vector2( 30.82, 70.844 )
 rotation = 3.14159
 frames = SubResource( 61 )
-frame = 43
+frame = 47
 playing = true
 
 [node name="rakete" type="Sprite" parent="."]
