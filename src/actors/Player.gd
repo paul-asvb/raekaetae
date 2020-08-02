@@ -15,17 +15,17 @@ func _process(delta):
 	
 	if right ==	 1 :
 		get_node("fireRight").visible = true
-		var boosterForceRight = Vector2(0,-force)
+		var boosterForceRight = Vector2(0,-force).rotated(rotation)
 		var offsetRight := Vector2(offset,0)
 		apply_impulse(offsetRight,boosterForceRight)
 		
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
-		var boosterForceLeft = Vector2(0,-force)
+		var boosterForceLeft = Vector2(0,-force).rotated(rotation)
 		var offsetleft := Vector2(-offset,0)		
 		apply_impulse(offsetleft,boosterForceLeft)
 	
-	#print(linear_velocity)
+	print(rotation)
 	
 	return
 
