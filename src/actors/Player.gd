@@ -2,7 +2,7 @@ extends Actor
 
 var velocityMax := Vector2(100,100)
 var force := 2
-var offset := 100
+var offset := 50
 var boosterTorque :=0
 
 func _process(delta):
@@ -16,22 +16,27 @@ func _process(delta):
 	if right ==	 1 :
 		get_node("fireRight").visible = true
 		var boosterForceRight = Vector2(0,-force).rotated(rotation)
+		
 		var offsetRight := Vector2(offset,0)
 		apply_impulse(offsetRight,boosterForceRight)
 		
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
-		var boosterForceLeft = Vector2(0,-force).rotated(rotation)
+		var boosterForceLeft = Vector2(0,-force).rotated(-rotation)
+		
 		var offsetleft := Vector2(-offset,0)		
 		apply_impulse(offsetleft,boosterForceLeft)
 	
 	print(rotation)
+	
+	get_node("MyLine").set_point_position(1,Vector2(0,-force*100).rotated(rotation))
 	
 	return
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("MyLine").set_point_position(0,Vector2(0,0))
 	pass # Replace with function body.
 
 

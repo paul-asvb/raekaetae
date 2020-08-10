@@ -320,14 +320,14 @@ script = ExtResource( 2 )
 position = Vector2( -32.0335, 71.2907 )
 rotation = 3.14159
 frames = SubResource( 61 )
-frame = 49
+frame = 19
 playing = true
 
 [node name="fireRight" type="AnimatedSprite" parent="."]
 position = Vector2( 30.82, 70.844 )
 rotation = 3.14159
 frames = SubResource( 61 )
-frame = 48
+frame = 18
 playing = true
 
 [node name="rakete" type="Sprite" parent="."]
@@ -338,3 +338,8 @@ texture = ExtResource( 1 )
 position = Vector2( -0.14306, 0.896622 )
 scale = Vector2( 0.3, 0.3 )
 polygon = PoolVector2Array( 87, -3, 86, 35, 112, 36, 141, 88, 142, 153, -141, 151, -141, 88, -111, 36, -86, 35, -86, -11, -78, -67, -57, -123, -28, -164, 0, -195, 31, -161, 57, -122, 77, -66 )
+
+[node name="MyLine" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 3.0
+default_color = Color( 1, 0, 0.258824, 1 )
