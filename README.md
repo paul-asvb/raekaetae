@@ -13,3 +13,4 @@ docker run \
     godot -v --export "HTML5" /export/raekaetae.zip
 
 docker run  -v $PWD/export:/usr/share/nginx/html:ro -p 80 -d nginx
+release ations working
