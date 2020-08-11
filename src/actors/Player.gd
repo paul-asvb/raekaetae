@@ -29,7 +29,7 @@ func _process(delta):
 	
 	print(rotation)
 	
-	get_node("MyLine").set_point_position(1,Vector2(0,-force*100).rotated(rotation))
+	get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(rotation))
 	
 	return
 
