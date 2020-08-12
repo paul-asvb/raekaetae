@@ -26,8 +26,7 @@ func _process(delta):
 		
 		var offsetleft := Vector2(-offset,0)		
 		apply_impulse(offsetleft,boosterForceLeft)
-	
-	print(rotation)
+
 	
 	get_node("MyLine").set_point_position(1,Vector2(0,-force*50))
 	
