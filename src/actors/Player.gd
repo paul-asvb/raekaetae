@@ -13,22 +13,24 @@ func _process(delta):
 	var left :=  Input.get_action_strength("move_left")
 	var right :=  Input.get_action_strength("move_right")
 	
+	var playerrotation := get_global_transform().get_rotation()
+	
 	if right ==	 1 :
 		get_node("fireRight").visible = true
-		var boosterForceRight = Vector2(0,-force).rotated(rotation)
+		var boosterForceRight = Vector2(0,-force).rotated(playerrotation)
 		
 		var offsetRight := Vector2(offset,0)
 		apply_impulse(offsetRight,boosterForceRight)
 		
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
-		var boosterForceLeft = Vector2(0,-force).rotated(-rotation)
+		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
 		
 		var offsetleft := Vector2(-offset,0)		
 		apply_impulse(offsetleft,boosterForceLeft)
 
-	
-	get_node("MyLine").set_point_position(1,Vector2(0,-force*50))
+	print( )
+	get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(playerrotation))
 	
 	return
 
