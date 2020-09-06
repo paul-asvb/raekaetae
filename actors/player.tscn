@@ -1,7 +1,7 @@
 [gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://assets/rakete.png" type="Texture" id=1]
-[ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/fire1_64.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -320,14 +320,14 @@ script = ExtResource( 2 )
 position = Vector2( -32.0335, 71.2907 )
 rotation = 3.14159
 frames = SubResource( 61 )
-frame = 19
+frame = 26
 playing = true
 
 [node name="fireRight" type="AnimatedSprite" parent="."]
 position = Vector2( 30.82, 70.844 )
 rotation = 3.14159
 frames = SubResource( 61 )
-frame = 18
+frame = 25
 playing = true
 
 [node name="rakete" type="Sprite" parent="."]

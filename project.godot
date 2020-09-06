@@ -8,21 +8,15 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "RigidBody2D",
-"class": "Actor",
-"language": "GDScript",
-"path": "res://src/actors/Actor.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"Actor": ""
+
 }
 
 [application]
 
 config/name="Räkäte"
-run/main_scene="res://src/levels/TestLevel.tscn"
-config/icon="res://assets/rakete.png"
+run/main_scene="res://levels/TestLevel.tscn"
 
 [display]
 

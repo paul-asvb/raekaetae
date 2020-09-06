@@ -1,11 +1,11 @@
-extends Actor
+extends RigidBody2D
 
 var velocityMax := Vector2(100,100)
 var force := 2
 var offset := 50
 var boosterTorque :=0
 
-func _process(delta):
+func _process(_delta):
 	
 	get_node("fireRight").visible = false
 	get_node("fireLeft").visible = false
