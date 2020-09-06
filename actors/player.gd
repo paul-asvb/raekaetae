@@ -3,7 +3,7 @@ extends RigidBody2D
 var velocityMax := Vector2(100,100)
 var force := 2
 var offset := 50
-var boosterTorque :=0
+var boosterTorque :=200
 
 func _process(_delta):
 	
@@ -18,16 +18,17 @@ func _process(_delta):
 	if right ==	 1 :
 		get_node("fireRight").visible = true
 		var boosterForceRight = Vector2(0,-force).rotated(playerrotation)
+		apply_torque_impulse(+boosterTorque)
 		
-		var offsetRight := Vector2(offset,0)
-		apply_impulse(offsetRight,boosterForceRight)
+		apply_central_impulse(boosterForceRight)
+		
 		
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
-		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
 		
-		var offsetleft := Vector2(-offset,0)		
-		apply_impulse(offsetleft,boosterForceLeft)
+		apply_torque_impulse(-boosterTorque)
+		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
+		apply_central_impulse(boosterForceLeft)
 
 	print(playerrotation)
 	get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(playerrotation))
