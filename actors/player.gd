@@ -18,7 +18,7 @@ func _process(_delta):
 	if right ==	 1 :
 		get_node("fireRight").visible = true
 		var boosterForceRight = Vector2(0,-force).rotated(playerrotation)
-		apply_torque_impulse(+boosterTorque)
+		apply_torque_impulse(-boosterTorque)
 		
 		apply_central_impulse(boosterForceRight)
 		
@@ -26,7 +26,7 @@ func _process(_delta):
 	if left ==	 1 :
 		get_node("fireLeft").visible = true
 		
-		apply_torque_impulse(-boosterTorque)
+		apply_torque_impulse(boosterTorque)
 		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
 		apply_central_impulse(boosterForceLeft)
 
