@@ -17,3 +17,6 @@ release ations working
 
 
 https://opengameart.org/content/space-shooter-extension-250
+
+Camera:
+https://www.youtube.com/watch?v=E7f93ZM8qTo
