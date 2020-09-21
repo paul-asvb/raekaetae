@@ -1,3 +1,8 @@
+## Serve docker build
+```bash
+docker run  -v $PWD/export:/usr/share/nginx/html:ro -p 80 -d nginx
+```
+
 ## Test build
 
 ```bash
