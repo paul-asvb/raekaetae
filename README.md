@@ -1,22 +1,20 @@
-https://www.youtube.com/watch?v=xsAyx2r1bQU
-https://www.youtube.com/watch?v=Mc13Z2gboEk
-39:49
-https://www.youtube.com/watch?v=RBotJacQycc
+## Test build
 
-https://www.youtube.com/watch?v=gkY6X-bziHQ
-
+```bash
 docker run \
     -v $(pwd):/build/src \
     -w /build/src \
     -v $PWD/export:/export \
     "barichello/godot-ci:3.2.1" \
     godot -v --export "HTML5" /export/raekaetae.zip
-
-docker run  -v $PWD/export:/usr/share/nginx/html:ro -p 80 -d nginx
-release ations working
-
+```
+## Art
 
 https://opengameart.org/content/space-shooter-extension-250
 
-Camera:
+## Tutorials
+https://www.youtube.com/watch?v=xsAyx2r1bQU
+https://www.youtube.com/watch?v=Mc13Z2gboEk
+https://www.youtube.com/watch?v=RBotJacQycc
+https://www.youtube.com/watch?v=gkY6X-bziHQ
 https://www.youtube.com/watch?v=E7f93ZM8qTo
