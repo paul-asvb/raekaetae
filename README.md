@@ -11,7 +11,7 @@ docker run \
     -w /build/src \
     -v $PWD/export:/export \
     "barichello/godot-ci:3.2.1" \
-    godot -v --export "HTML5" /export/raekaetae.zip
+    godot -v --export "HTML5" /export/index.zip >&0
 ```
 ## Art
 
