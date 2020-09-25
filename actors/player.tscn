@@ -1,8 +1,9 @@
 [gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://assets/rakete.png" type="Texture" id=1]
-[ext_resource path="res://actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://actors/player.gd" type="Script" id=2]
 [ext_resource path="res://assets/fire1_64.png" type="Texture" id=3]
+
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
