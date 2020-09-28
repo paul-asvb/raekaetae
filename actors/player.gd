@@ -16,29 +16,26 @@ func _process(_delta):
 	var playerrotation := get_global_transform().get_rotation()
 	
 	if right ==	 1 :
-		get_node("fireRight").visible = true
+		$fireRight.visible = true
 		var boosterForceRight = Vector2(0,-force).rotated(playerrotation)
 		apply_torque_impulse(-boosterTorque)
-		
 		apply_central_impulse(boosterForceRight)
 		
-		
 	if left ==	 1 :
-		get_node("fireLeft").visible = true
-		
+		$fireLeft.visible = true
 		apply_torque_impulse(boosterTorque)
 		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
 		apply_central_impulse(boosterForceLeft)
 
-	print(playerrotation)
-	get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(playerrotation))
+	# print(playerrotation)
+	# get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(playerrotation))
 	
 	return
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("MyLine").set_point_position(0,Vector2(0,0))
+	# get_node("MyLine").set_point_position(0,Vector2(0,0))
 	pass # Replace with function body.
 
 
