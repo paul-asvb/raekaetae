@@ -42,6 +42,7 @@ tile_data = PoolIntArray( -1900521, 0, 0, -1834987, 0, 0, -1834986, 0, 0, -18349
 position = Vector2( 493.669, 252.101 )
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+current = true
 
 [node name="Box" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 672, 154 )
