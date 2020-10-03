@@ -27,6 +27,7 @@ func _process(_delta):
 		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
 		apply_central_impulse(boosterForceLeft)
 
+	# $rootCamera.align()
 	# print(playerrotation)
 	# get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(playerrotation))
 	
