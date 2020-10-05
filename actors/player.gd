@@ -7,11 +7,22 @@ var boosterTorque :=200
 
 func _process(_delta):
 	var coliBodies = get_colliding_bodies()
+	# there is a collision
 	if coliBodies.size() > 0:
-		print(coliBodies)
-	
-	get_node("fireRight").visible = false
-	get_node("fireLeft").visible = false
+		$explosion.visible=true;
+		$explosion.playing=true;
+		$rakete.visible=false
+		$fireRight.visible = false
+		$fireLeft.visible = false
+		print($explosion.frame)
+		#if $explosion.frame == 15:
+			#get_parent().resetLevel()
+			#toggleExplosion()
+			
+		
+		
+	$fireRight.visible = false
+	$fireLeft.visible = false
 	
 	var left :=  Input.get_action_strength("move_left")
 	var right :=  Input.get_action_strength("move_right")
@@ -42,6 +53,11 @@ func _ready():
 	# get_node("MyLine").set_point_position(0,Vector2(0,0))
 	pass # Replace with function body.
 
+func toggleExplosion():
+	$explosion.visible=!$explosion.visible;
+	$rakete.visible=!$rakete.visible;
+	$fireRight.visible = !$fireRight.visible
+	$fireLeft.visible = !$fireLeft.visible
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
