@@ -40,6 +40,8 @@ tile_data = PoolIntArray( -1900521, 0, 0, -1834987, 0, 0, -1834986, 0, 0, -18349
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 493.669, 252.101 )
+contacts_reported = 1
+contact_monitor = true
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 current = true

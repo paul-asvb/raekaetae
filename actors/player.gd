@@ -6,6 +6,9 @@ var offset := 50
 var boosterTorque :=200
 
 func _process(_delta):
+	var coliBodies = get_colliding_bodies()
+	if coliBodies.size() > 0:
+		print(coliBodies)
 	
 	get_node("fireRight").visible = false
 	get_node("fireLeft").visible = false
