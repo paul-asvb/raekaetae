@@ -1,15 +1,36 @@
 extends RigidBody2D
-var velocityMax := Vector2(100,100)
-var force := 2
-var offset := 50
-var boosterTorque :=200
+
 enum PlayerStates {
 	FLYING
 	EXPLODING
 }
-var state
+
+var velocityMax := Vector2(100,100)
+var force := 2
+var offset := 50
+var boosterTorque :=200
+var 	state = PlayerStates.FLYING
+var startPos := Vector2(500,500)
+var startAngle := 0
+
+func _ready():
+	$explosion.connect("animation_finished", self, "animationFinished")
+	pass 
+
+func _reset():
+	print("_reset")
+	$explosion.stop()
+	position = startPos
+	#linear_velocity = Vector2()	
+	#transform = Transform2D(startAngle, startPos)	
+	state = PlayerStates.FLYING
 
 func _process(_delta):
+		
+	var coliBodies = get_colliding_bodies()
+	if coliBodies.size() > 0:
+		state = PlayerStates.EXPLODING
+	
 	match state:
 		PlayerStates.FLYING:
 			_flying()
@@ -18,10 +39,7 @@ func _process(_delta):
 	return
 
 func _flying():
-	var coliBodies = get_colliding_bodies()	
-	if coliBodies.size() > 0:
-		state = PlayerStates.EXPLODING
-		return
+	#print("_flying")
 	var fireLeft = $rocket/fireLeft
 	var fireRight = $rocket/fireRight
 	var rocket = $rocket
@@ -47,40 +65,16 @@ func _flying():
 		apply_torque_impulse(boosterTorque)
 		var boosterForceLeft = Vector2(0,-force).rotated(playerrotation)
 		apply_central_impulse(boosterForceLeft)
-		
-	pass
-	
-func _exploding():
-	print("ex")
-	pass
-	
 
-	# $rootCamera.align()
-	# print(playerrotation)
-	# get_node("MyLine").set_point_position(1,Vector2(0,-force*50).rotated(playerrotation))
-		
-	#if state == "destroyed":
-	#	$explosion.playing=true
-#		$explosion.visible=true
-#		rocket.visible=false
-#		
-#	return
+func _exploding():
+	#print("_exploding")
+	$explosion.playing=true
+	$explosion.visible=true
+	$rocket.visible=false
+	pass
 
 func animationFinished():
-	print("finished")
-	get_parent().resetLevel()
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$explosion.connect("animation_finished", self, "animationFinished")
-	# get_node("MyLine").set_point_position(0,Vector2(0,0))
-	pass # Replace with function body.
+	_reset()
 
-func toggleVisibility():
-	$explosion.visible=!$explosion.visible;
-	$rakete.visible=!$rakete.visible;
-	$fireRight.visible = !$fireRight.visible
-	$fireLeft.visible = !$fireLeft.visible
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
