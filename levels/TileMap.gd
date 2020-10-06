@@ -13,6 +13,7 @@ func _ready():
 
 func resetLevel():
 	$Player.position = start
+	$Player.state = "not_destroyed"
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
