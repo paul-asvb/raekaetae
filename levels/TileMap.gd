@@ -1,20 +1,13 @@
 extends TileMap
-var start := Vector2(500,300)
+var startPos := Vector2(500,300)
+var startAngle := 0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	resetLevel()
-	pass # Replace with function body.
+	pass
 
 func resetLevel():
-	$Player.position = start
-	$Player.state = "not_destroyed"
+	$Player.state = Playerstate.FLYING
+	$Player.transform = Transform2D(startAngle, startPos)
+	$Player.linear_velocity = Vector2()
 	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
