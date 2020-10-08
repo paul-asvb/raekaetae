@@ -423,14 +423,14 @@ polygon = PoolVector2Array( 87, -3, 86, 35, 112, 36, 141, 88, 142, 153, -141, 15
 position = Vector2( -32.0335, 71.2907 )
 rotation = 3.14159
 frames = SubResource( 78 )
-frame = 42
+frame = 31
 playing = true
 
 [node name="fireRight" type="AnimatedSprite" parent="rocket"]
 position = Vector2( 30.82, 70.844 )
 rotation = 3.14159
 frames = SubResource( 78 )
-frame = 41
+frame = 30
 playing = true
 
 [node name="rakete" type="Sprite" parent="rocket"]

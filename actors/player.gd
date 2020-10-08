@@ -3,6 +3,7 @@ extends RigidBody2D
 enum PlayerStates {
 	FLYING
 	EXPLODING
+	RESETING
 }
 
 var velocityMax := Vector2(100,100)
@@ -10,37 +11,38 @@ var force := 2
 var offset := 50
 var boosterTorque :=200
 var 	state = PlayerStates.FLYING
-var startPos := Vector2(500,500)
+var startPos := Vector2(400,400)
 var startAngle := 0
 
 func _ready():
-	$explosion.connect("animation_finished", self, "animationFinished")
-	connect("body_entered", self, "bla")
-	pass 
+	$explosion.connect("animation_finished", self, "_animation_finished")
+	$explosion.connect("body_entered", self, "bla")
+	
+	pass
 
 func bla():
 	print("bla")
-	
+
+func _integrate_forces(s):
+	match state:
+		PlayerStates.RESETING:
+			state = PlayerStates.FLYING			
+			_reset()
+	#linear_velocity = Vector2()	
+			#s.transform = Transform2D(startAngle, velocityMax)	
+		PlayerStates.FLYING:
+			var count = s.get_contact_count()
+			if count > 0:
+				state = PlayerStates.EXPLODING
+			_flying()
+		PlayerStates.EXPLODING:
+			_exploding()
+	pass
+
 func _reset():
 	print("_reset")
 	$explosion.stop()
 	position = startPos
-	#linear_velocity = Vector2()	
-	#transform = Transform2D(startAngle, startPos)	
-	state = PlayerStates.FLYING
-
-func _process(_delta):
-		
-	#var coliBodies = get_colliding_bodies()
-	#if coliBodies.size() > 0:
-	#	state = PlayerStates.EXPLODING
-	
-	match state:
-		PlayerStates.FLYING:
-			_flying()
-		PlayerStates.EXPLODING:
-			_exploding()
-	return
 
 func _flying():
 	#print("_flying")
@@ -75,10 +77,8 @@ func _exploding():
 	$explosion.playing=true
 	$explosion.visible=true
 	$rocket.visible=false
-	pass
-
-func animationFinished():
-	_reset()
-
-
+	
+func _animation_finished():
+	state = PlayerStates.RESETING
+	
 

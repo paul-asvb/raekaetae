@@ -54,8 +54,8 @@ tile_data = PoolIntArray( -1900521, 0, 0, -1834987, 0, 0, -1834986, 0, 0, -18349
 script = SubResource( 3 )
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
-position = Vector2( 500, 500 )
-contacts_reported = 1
+position = Vector2( 400, 400 )
+contacts_reported = 4
 contact_monitor = true
 angular_velocity = 1.0
 angular_damp = 2.0
