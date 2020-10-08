@@ -1,25 +1,10 @@
-## Serve docker build
-```bash
-docker run  -v $PWD/export:/usr/share/nginx/html:ro -p 80 -d nginx
-```
+# Raekaetae
 
-## Test build
+simple 2d rocket game
 
-```bash
-docker run \
-    -v $(pwd):/build/src \
-    -w /build/src \
-    -v $PWD/export:/export \
-    "barichello/godot-ci:3.2.1" \
-    godot -v --export "HTML5" /export/index.zip >&0
-```
-## Art
+![image](https://github.com/paul-asvb/raekaetae/blob/master/assets/Screenshot%20from%202020-10-08%2008-18-10.png?raw=true)
 
-https://opengameart.org/content/space-shooter-extension-250
+## Getting started with development
 
-## Tutorials
-https://www.youtube.com/watch?v=xsAyx2r1bQU
-https://www.youtube.com/watch?v=Mc13Z2gboEk
-https://www.youtube.com/watch?v=RBotJacQycc
-https://www.youtube.com/watch?v=gkY6X-bziHQ
-https://www.youtube.com/watch?v=E7f93ZM8qTo
+[Godot getting started](https://docs.godotengine.org/en/stable/getting_started/step_by_step/index.html)
+[Continous Integration](https://github.com/paul-asvb/raekaetae/blob/master/docs/ci.md)
