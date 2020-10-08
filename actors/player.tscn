@@ -423,25 +423,16 @@ polygon = PoolVector2Array( 87, -3, 86, 35, 112, 36, 141, 88, 142, 153, -141, 15
 position = Vector2( -32.0335, 71.2907 )
 rotation = 3.14159
 frames = SubResource( 78 )
-frame = 48
+frame = 42
 playing = true
 
 [node name="fireRight" type="AnimatedSprite" parent="rocket"]
 position = Vector2( 30.82, 70.844 )
 rotation = 3.14159
 frames = SubResource( 78 )
-frame = 47
+frame = 41
 playing = true
 
 [node name="rakete" type="Sprite" parent="rocket"]
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
-
-[node name="label" type="RichTextLabel" parent="."]
-margin_left = 14.6052
-margin_top = -96.8553
-margin_right = 54.6052
-margin_bottom = -56.8553
-__meta__ = {
-"_edit_use_anchors_": false
-}

@@ -15,8 +15,12 @@ var startAngle := 0
 
 func _ready():
 	$explosion.connect("animation_finished", self, "animationFinished")
+	connect("body_entered", self, "bla")
 	pass 
 
+func bla():
+	print("bla")
+	
 func _reset():
 	print("_reset")
 	$explosion.stop()
@@ -27,9 +31,9 @@ func _reset():
 
 func _process(_delta):
 		
-	var coliBodies = get_colliding_bodies()
-	if coliBodies.size() > 0:
-		state = PlayerStates.EXPLODING
+	#var coliBodies = get_colliding_bodies()
+	#if coliBodies.size() > 0:
+	#	state = PlayerStates.EXPLODING
 	
 	match state:
 		PlayerStates.FLYING:
