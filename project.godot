@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Räkäte"
-run/main_scene="res://levels/testLevel.tscn"
+config/name="raekaetae"
+run/main_scene="res://levels/root.tscn"
 config/icon="res://assets/rakete.png"
 
 [input]

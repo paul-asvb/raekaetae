@@ -16,20 +16,10 @@ var startAngle := 0
 
 func _ready():
 	$explosion.connect("animation_finished", self, "_animation_finished")
-	$explosion.connect("body_entered", self, "bla")
-	
 	pass
-
-func bla():
-	print("bla")
 
 func _integrate_forces(s):
 	match state:
-		PlayerStates.RESETING:
-			state = PlayerStates.FLYING			
-			_reset()
-	#linear_velocity = Vector2()	
-			#s.transform = Transform2D(startAngle, velocityMax)	
 		PlayerStates.FLYING:
 			var count = s.get_contact_count()
 			if count > 0:
@@ -42,10 +32,8 @@ func _integrate_forces(s):
 func _reset():
 	print("_reset")
 	$explosion.stop()
-	position = startPos
 
 func _flying():
-	#print("_flying")
 	var fireLeft = $rocket/fireLeft
 	var fireRight = $rocket/fireRight
 	var rocket = $rocket
@@ -79,6 +67,8 @@ func _exploding():
 	$rocket.visible=false
 	
 func _animation_finished():
-	state = PlayerStates.RESETING
+	var current_scene = get_tree().get_current_scene()
+	current_scene.resetLevel()
+	#$rootNode.resetLevel()
 	
 
