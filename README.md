@@ -2,7 +2,7 @@
 
 simple 2d rocket game
 
-![image](https://github.com/paul-asvb/raekaetae/blob/master/assets/Screenshot%20from%202020-10-08%2008-18-10.png?raw=true)
+![video](https://github.com/paul-asvb/raekaetae/blob/master/docs/media/demo_0.1.webm?raw=true)
 
 ## Getting started with development
 
