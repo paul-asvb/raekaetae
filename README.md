@@ -2,7 +2,7 @@
 
 simple 2d rocket game
 
-[![demo v0.1](https://www.youtube.com/watch?v=W3Z_NTl2HwU)](https://www.youtube.com/watch?v=W3Z_NTl2HwU)
+[![demo v0.1](https://github.com/paul-asvb/raekaetae/blob/master/docs/media/raekaete_demo_0_1.gif)](https://www.youtube.com/watch?v=W3Z_NTl2HwU)
 
 ## Getting started with development
 
