@@ -8,3 +8,4 @@ simple 2d rocket game
 
 [Godot getting started](https://docs.godotengine.org/en/stable/getting_started/step_by_step/index.html)
 [Continous Integration](https://github.com/paul-asvb/raekaetae/blob/master/docs/ci.md)
+[Art](https://github.com/paul-asvb/raekaetae/blob/master/docs/art.md)
